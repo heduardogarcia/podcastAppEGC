@@ -1,0 +1,28 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.planes{
+    background-color: v.$secundario;
+    h2{
+        @include m.headingBorder(v.$blanco, v.$primario);
+    }
+    .descripcion{
+        color: v.$blanco;
+    }
+}
+
+.nuestros-planes{
+    display: flex;
+    flex-direction: column;
+    @include m.tablet{
+        flex-direction: row;
+    }
+    .plan{
+        &.negocio{
+            order: -1;
+            @include m.tablet{
+                order: unset;
+            }
+        }
+    }
+}
